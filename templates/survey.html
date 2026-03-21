@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        h1, h2 {
+            color: #006699;
+        }
+        label {
+            margin-bottom: 10px;
+            display: block;
+            font-weight: bold;
+        }
+        input[type=text], input[type=date],
+        input[type=email], input[type=tel],
+        textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=submit], input[type=button] {
+            background-color: #006699;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover,
+        input[type=button]:hover {
+            background-color: #005580;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>Prospective Student Survey</h1>
+
+    <form action="https://formspree.io/f/xpwqlpyr" method="POST">
+
+        <label for="firstName">First Name *</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name *</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="address">Street Address *</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="city">City *</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State *</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="zip">Zip *</label>
+        <input type="text" id="zip" name="zip" required>
+
+        <label for="tel">Telephone Number *</label>
+        <input type="tel" id="tel" name="tel" required>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="date">Date of Survey *</label>
+        <input type="date" id="date" name="date" required>
+
+        <h2>What did you like most about our campus?</h2>
+        <input type="checkbox" id="students" name="like[]" value="students">
+        <label for="students">Students</label>
+
+        <input type="checkbox" id="location" name="like[]" value="location">
+        <label for="location">Location</label>
+
+        <input type="checkbox" id="campus" name="like[]" value="campus">
+        <label for="campus">Campus</label>
+
+        <input type="checkbox" id="atmosphere" name="like[]" value="atmosphere">
+        <label for="atmosphere">Atmosphere</label>
+
+        <input type="checkbox" id="dorm_rooms" name="like[]" value="dorm_rooms">
+        <label for="dorm_rooms">Dorm Rooms</label>
+
+        <input type="checkbox" id="sports" name="like[]" value="sports">
+        <label for="sports">Sports</label>
+
+        <h2>How did you hear about us?</h2>
+        <input type="radio" id="friends" name="interest" value="friends">
+        <label for="friends">Friends</label>
+
+        <input type="radio" id="television" name="interest" value="television">
+        <label for="television">Television</label>
+
+        <input type="radio" id="internet" name="interest" value="internet">
+        <label for="internet">Internet</label>
+
+        <input type="radio" id="other" name="interest" value="other">
+        <label for="other">Other</label>
+
+        <label for="recommendation">Would you recommend our school?</label>
+        <select id="recommendation" name="recommendation">
+            <option value="Very Likely">Very Likely</option>
+            <option value="Likely">Likely</option>
+            <option value="Unlikely">Unlikely</option>
+        </select>
+
+        <label for="comments">Additional Comments</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+
+        <input type="submit" value="Submit">
+        <input type="button" value="Cancel"
+               onclick="window.location='';">
+    </form>
+
+</div>
+</body>
+</html>
