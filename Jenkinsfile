@@ -1,8 +1,7 @@
 pipeline {
     agent any
     environment {
-        GCR_REPO = "gcr.io/YOUR_PROJECT_ID/survey-app"
-        GITHUB_TOKEN = credentials('github-token')
+        GCR_REPO = "us-central1-docker.pkg.dev/project-8a788ef4-4bf5-45aa-996/survey-repo/survey-app"
     }
     stages {
         stage('Clone Repository') {
@@ -17,7 +16,7 @@ pipeline {
                 sh 'docker build -t $GCR_REPO:latest .'
             }
         }
-        stage('Push to GCR') {
+        stage('Push to Artifact Registry') {
             steps {
                 sh 'docker push $GCR_REPO:latest'
             }
